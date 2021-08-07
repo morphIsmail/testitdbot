@@ -60,19 +60,19 @@
 - Зарегистрироваться на [GitHub](https://github.com/) и войти
 - Создать репозиторий и запушить код бота
 - Зарегистрироваться на [Heroku](https://www.heroku.com/) и войти
-- Создать новое приложение
+- Создать новое приложение  
   ![new/create new app](./img/deploy/create_new_app.jpg)
-- Добавить константу с API токеном
+- Добавить константу с API токеном  
   ![settings/config vars](./img/deploy/token_heroku.jpg)
-- Переключить Dyno с web на worker
+- Переключить Dyno с web на worker  
   ![resources](./img/deploy/resources.jpg)
-- На вкладке Deploy связать проект с репозиторием GitHub
+- На вкладке Deploy связать проект с репозиторием GitHub  
   ![deploy](./img/deploy/deploy.jpg)
 - Включить Automatic deploys (опционально)
 - Запусть Manual Deploy
-- Перезагрузить все Dyno
+- Перезагрузить все Dyno  
   ![more/restart all dynos](./img/deploy/restart.jpg)
-- Просматривать логи
+- Просматривать логи  
   ![more/view logs](./img/deploy/logs.jpg)
 
 ### Полезные материалы
@@ -94,7 +94,7 @@
 ### Контакты ITDoctor
 
 [YouTube](https://www.youtube.com/c/ITDoctor)  
-[Telegram](https://t.me/itdoctorstudio) и бот [@itdoctorNavigatorBot](https://t.me/itdoctorNavigatorBot?start)
+[Telegram](https://t.me/itdoctorstudio) и бот [@itdoctorNavigatorBot](https://t.me/itdoctorNavigatorBot?start)  
 [Курсы на Udemy](https://www.udemy.com/user/useinov-ismail-asanovich/)  
 [GitHub](https://github.com/morphIsmail)  
 [VK](https://vk.com/itdoctorstudio)  
