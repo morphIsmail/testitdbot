@@ -1,14 +1,20 @@
+// Импорт Telegraf и Markup
 const {
   Telegraf,
   Markup
 } = require('telegraf')
+// Импорт dotenv для защиты API токена
 require('dotenv').config()
-const text = require('./const')
-
+// Импорт нашего модуля с константами
+const my_const = require('./const')
+// Инициализация бота с помощью Telegraf
 const bot = new Telegraf(process.env.BOT_TOKEN)
-bot.start((ctx) => ctx.reply(`Привет ${ctx.message.from.first_name ? ctx.message.from.first_name : 'незнакомец'}!`))
-bot.help((ctx) => ctx.reply(text.commands))
 
+// Обработка команды /start
+bot.start((ctx) => ctx.reply(`Привет ${ctx.message.from.first_name ? ctx.message.from.first_name : 'незнакомец'}!`))
+// Обработка команды /help
+bot.help((ctx) => ctx.reply(my_const.commands))
+// Обработка команды /course
 bot.command('course', async (ctx) => {
   try {
     await ctx.replyWithHTML('<b>Курсы</b>', Markup.inlineKeyboard(
@@ -20,30 +26,38 @@ bot.command('course', async (ctx) => {
     console.error(e)
   }
 })
-
-function addActionBot(name, src, text) {
-  bot.action(name, async (ctx) => {
+/**
+ * Функция для отправки сообщения ботом
+ * @param {String} id_btn Идентификатор кнопки для обработки
+ * @param {String} src_img Путь к изображению, или false чтобы отправить только текст
+ * @param {String} text Текстовое сообщение для отправки
+ * @param {Boolean} preview Блокировать превью у ссылок или нет, true - блокировать, false - нет
+ */
+function addActionBot(id_btn, src_img, text, preview) {
+  bot.action(id_btn, async (ctx) => {
     try {
       await ctx.answerCbQuery()
-      if (src !== false) {
+      if (src_img !== false) {
         await ctx.replyWithPhoto({
-          source: src
+          source: src_img
         })
       }
       await ctx.replyWithHTML(text, {
-        disable_web_page_preview: true
+        disable_web_page_preview: preview
       })
     } catch (e) {
       console.error(e)
     }
   })
 }
-addActionBot('btn_1', './img/1.jpg', text.text1)
-addActionBot('btn_2', './img/2.jpg', text.text2)
-addActionBot('btn_3', false, text.text3)
+// Обработчик кнопок с помощью функции
+addActionBot('btn_1', './img/1.jpg', my_const.text1, true)
+addActionBot('btn_2', './img/2.jpg', my_const.text2, true)
+addActionBot('btn_3', false, my_const.text3, false)
 
+// Запустить бота
 bot.launch()
 
-// Enable graceful stop
+// Включить плавную остановку
 process.once('SIGINT', () => bot.stop('SIGINT'))
 process.once('SIGTERM', () => bot.stop('SIGTERM'))
