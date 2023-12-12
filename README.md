@@ -85,17 +85,10 @@
 - [Перехват ошибок try catch](https://youtu.be/jMoyWtoDtYA)
 - [Курс по Git + GitHub](https://www.youtube.com/playlist?list=PLuY6eeDuleIOMB2R_Kky05ZfiAx2_pbAH)
 
-### Автору на кофе
-
-Сбер VISA: 4274 3200 3233 1582  
-[Yoomoney](https://yasobe.ru/na/itdoctor)  
-[PayPal](https://paypal.me/itdoctorstudio)
-
 ### Контакты ITDoctor
 
 [YouTube](https://www.youtube.com/c/ITDoctor)  
 [Telegram](https://t.me/itdoctorstudio) и бот [@itdoctorNavigatorBot](https://t.me/itdoctorNavigatorBot?start)  
 [Курсы на Udemy](https://www.udemy.com/user/useinov-ismail-asanovich/)  
 [GitHub](https://github.com/morphIsmail)  
-[VK](https://vk.com/itdoctorstudio)  
-[Instagram](https://instagram.com/ismail_asanovich)
+[VK](https://vk.com/itdoctorstudio)
